@@ -23,7 +23,6 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth'])->group(function() {
-
     // checkout routes
     Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
     Route::get('checkout/{camp:slug}', [CheckoutController::class, 'create'])->name('checkout.create');
@@ -33,14 +32,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-
 // socialite routes
 Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
 Route::get('auth/google/callback', [UserController::class, 'handleProfiderCallback'])->name('user.google.callback');
+Route::get('dashboard/checkout/invoice/{checkout}', [CheckoutController::class, 'invoices'])->name('user.checkout.invoice');
 
 
 require __DIR__.'/auth.php';
