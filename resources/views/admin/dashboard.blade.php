@@ -34,7 +34,7 @@
                                     <td>{{ $checkout->created_at->format('M d Y') }}</td>
                                     <td>
                                         @if ($checkout->is_paid == '0')
-                                            <span class="badge bg-warning">Not Paid</span>
+                                            <span class="badge bg-warning">Waiting</span>
                                         @else
                                             <span class="badge bg-success">Paid</span>
                                         @endif
