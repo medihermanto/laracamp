@@ -28,7 +28,7 @@
                    @if (Auth::user()->avatar)
                    <img src="{{ Auth::user()->avatar }}" class="user-photo" style="border-radius:50%" alt="">
                    @else
-                   <img src="https://ui-avatars.com/api/?background=0D8ABC&color=fff" class="user-photo" style="border-radius:50%" alt="">
+                   <img src="https://ui-avatars.com/api/?background=0D8ABC&color=fff" class="user-photo"  alt="">
                    @endif
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right:0; left:auto;">
                         <li>

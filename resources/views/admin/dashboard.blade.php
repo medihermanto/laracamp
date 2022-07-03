@@ -20,7 +20,6 @@
                                 <th>Price</th>
                                 <th>Register Date</th>
                                 <th>Paid Status</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,12 +39,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if ($checkout->is_paid == '0')
-                                        <form action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
-                                            @csrf
-                                            <button class="btn-primary btn-sm">Set to Paid</button>
-                                        </form>
-                                        @endif
+                                       <strong>{{ $checkout->payment_status }}</strong>
                                     </td>
                                 </tr>
                             @empty
